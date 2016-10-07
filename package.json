@@ -1,0 +1,34 @@
+{
+  "name": "lsdj-wave-cruncher",
+  "version": "0.1.0",
+  "description": "Turns a sound clip into a LSDJ wavetable synth. ",
+  "main": "lib/cruncher.js",
+  "scripts": {
+    "test": "node test/cruncher.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iLambda/lsdj-wave-cruncher.git"
+  },
+  "keywords": [
+    "lsdj",
+    "wave",
+    "wavetable",
+    "wav",
+    "cruncher",
+    "sound"
+  ],
+  "author": "iLambda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iLambda/lsdj-wave-cruncher/issues"
+  },
+  "homepage": "https://github.com/iLambda/lsdj-wave-cruncher#readme",
+  "dependencies": {
+    "lodash": "^4.16.4"
+  },
+  "devDependencies": {
+    "tape": "^4.6.2",
+    "tape-catch": "^1.0.6"
+  }
+}
