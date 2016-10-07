@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/iLambda/lsdj-wave-cruncher#readme",
   "dependencies": {
-    "lodash": "^4.16.4"
+    "lodash": "^4.16.4",
+    "node-wav": "0.0.2"
   },
   "devDependencies": {
     "tape": "^4.6.2",
