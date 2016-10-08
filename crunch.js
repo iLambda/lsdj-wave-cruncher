@@ -10,4 +10,4 @@ if (process.argv.length != 4) {
 }
 
 // crunch
-cruncher(process.argv[2], process.argv[3])
+console.log(cruncher(process.argv[2], process.argv[3]), { normalize: true })
