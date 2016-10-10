@@ -5,7 +5,9 @@
   "main": "lib/cruncher.js",
   "scripts": {
     "test": "node test/cruncher.js",
-    "start": "node crunch.js"
+    "start": "node crunch-patch.js",
+    "crunch": "node crunch.js",
+    "patch": "node patch.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,7 @@
     "tonal": "^0.50.3"
   },
   "devDependencies": {
+    "flags": "^0.1.3",
     "tape": "^4.6.2",
     "tape-catch": "^1.0.6"
   }
