@@ -32,3 +32,5 @@ $ node patch.js [SONG.LSDSNG|.SRM] [SYNTHFILE.SNT] [SYNTHNUMBER]
 * *[SYNTHNUMBER]* is the ID of the synth that'll be written to.
 
 ## crunch-patching
+
+## exporting
