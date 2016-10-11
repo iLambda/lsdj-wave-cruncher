@@ -4,9 +4,8 @@ import sys
 import os.path
 
 # check argv length
-if (sys.argv <= 5) {
+if (sys.argv <= 5):
     sys.exit('Usage : python patcher.py ([SAVEFILE.sav] [#TRACKNUMBER] or [SONGFILE.srm|.lsdsng]) [SYNTH.snt] [#SYNTHNUMBER]')
-}
 
 # get file patcher
 savpath = sys.argv[1]
