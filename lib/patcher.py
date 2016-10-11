@@ -33,15 +33,17 @@ else:
 song = project.song
 # get synth
 synth = song.synths[synthnumber]
-# unlock
-synth.wave_synth_overwrite_lock = True
 
 # read bin file
 with open(synthpath, 'rb') as f:
     synthdata = f.read()
 
 # chunk synth data
-synth.waves = [synthdata[x:x+16] for x in range(0, len(synthdata), 16)]
+synthdata = [synthdata[x:x+16] for x in range(0, len(synthdata), 16)]
+for i in range(len(synthdata)):
+    for j in range(len(synthdata[i])):
+        synth.waves[i][2*j] = ord(synthdata[i][j]) >> 4
+        synth.waves[i][2*j+1] = ord(synthdata[i][j]) & 0x0F
 
 # save modified file
 if ext == '.sav':
