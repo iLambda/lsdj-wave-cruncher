@@ -41,7 +41,7 @@ with open(synthpath, 'rb') as f:
     synthdata = f.read()
 
 # chunk synth data
-synth.waves = [synthdata[x:x+8] for x in range(0, len(synthdata), 8)]
+synth.waves = [synthdata[x:x+16] for x in range(0, len(synthdata), 16)]
 
 # save modified file
 if ext == '.sav':
