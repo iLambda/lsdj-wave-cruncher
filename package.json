@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "flags": "^0.1.3",
+    "python-shell": "^0.4.0",
     "tape": "^4.6.2",
     "tape-catch": "^1.0.6"
   }

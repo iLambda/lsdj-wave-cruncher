@@ -5,12 +5,12 @@ var PythonShell = require('python-shell')
 
 // check usage
 if (process.argv.length < 5) {
-  console.log('Usage: node patch.js ([SAVEFILE.sav] [#TRACKNUMBER] or [SONGFILE.srm|.lsdsng]) [SYNTH.snt] [#SYNTHNUMBER]')
+  console.log('Usage: node export.js ([SAVEFILE.sav] [#TRACKNUMBER] or [SONGFILE.srm|.lsdsng]) [#SYNTHNUMBER] [SYNTH.snt]')
   process.exit(1)
 }
 
 // create shell
-var shell = new PythonShell('./lib/patcher.py', { args: process.argv.slice(2) })
+var shell = new PythonShell('./lib/exporter.py', { args: process.argv.slice(2) })
 
 // log msgs
 shell.on('message', function (msg) {
@@ -21,10 +21,7 @@ shell.on('message', function (msg) {
 // end
 shell.end(function (err) {
   // error
-  if (err) {
-    console.log("Error : " + err)
-    process.exit(1)
-  }
+  if (err) throw err
   // done
   console.log('Done!')
 })

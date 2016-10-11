@@ -7,10 +7,11 @@ var flags = require('flags')
 // define flags
 flags.defineBoolean('normalize', false, 'Normalize the wave ?')
 flags.defineBoolean('channel', 0, 'Channel for data?')
+
 // check usage
 if (process.argv.length < 4) {
-  console.log('Usage: node crunch.js [FILENAME] [NOTE|BASE FREQUENCY]');
-  process.exit(1);
+  console.log('Usage: node crunch.js [SOUND.WAV] [NOTE|BASE FREQUENCY]')
+  process.exit(1)
 }
 // parse flags
 flags.parse(process.argv.slice(4))
@@ -38,8 +39,11 @@ fs.writeFile(path.dirname(process.argv[2]) + "/" + filename, buf, function(err) 
   // error
   if (err) {
     console.log("Error : " + err)
-    process.exit(1);
+    process.exit(1)
   } else {
     console.log("Successfully output " + filename + "!")
   }
 })
+
+// done
+console.log('Done!')
