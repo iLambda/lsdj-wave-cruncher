@@ -25,7 +25,7 @@ elif ext == '.srm' or ext == '.lsdsng':
     synthpath = int(sys.argv[2])
     synthnumber = sys.argv[3]
     # get project
-    project = pylsdj.load_srm(savpath)
+    project = pylsdj.load_srm(savpath) if ext == '.srm' else pylsdj.load_lsdsng(savpath)
 else:
     sys.exit('Invalid savefile/songfile (extension ' + ext + ' unsupported).')
 
