@@ -10,10 +10,13 @@ lsdj-wave-cruncher is a bundle of scripts allowing an LSDJ user to create waveta
 
 To *crunch* a sample, use :
 ```
-$ node crunch.js [SAMPLE.WAV] [NOTE|FREQUENCY]
+$ node crunch.js [SAMPLE.WAV] [NOTE|FREQUENCY] --normalize --channel=0
 ```
-* [SAMPLE.WAV] is the fine that'll be crunched
-* [NOTE|FREQUENCY] is either the note at which the sample is (ex: C4, D4) or its frequency (ex: 440 Hz).
+* *[SAMPLE.WAV]* is the fine that'll be crunched
+* *[NOTE|FREQUENCY]* is either the note at which the sample is (ex: C4, D4) or its frequency (ex: 440 Hz).
+* *--normalize*, if present, will [normalize](https://en.wikipedia.org/wiki/Audio_normalization) the sample.
+* *--channel=0* specifies the channel where the sound data will be taken. If not present, it defaults to the 1st channel (0). This parameter is only relevant for stereo sound.
+
 
 ## patching
 
@@ -22,17 +25,32 @@ $ node crunch.js [SAMPLE.WAV] [NOTE|FREQUENCY]
 To *patch* a synth, you can use both of these commands :
 ```
 $ node patch.js [LSDJSAVE.SAV] [SONGNUMBER] [SYNTHFILE.SNT] [SYNTHNUMBER]
-```
-```
 $ node patch.js [SONG.LSDSNG|.SRM] [SYNTHFILE.SNT] [SYNTHNUMBER]
 ```
 
-* *[LSDJSAVE.SAV]* is the save that'll be patched. If you want to patch a .SAV file, you have to supply the number of the song [SONGNUMBER] you'll want to add the synth to.
+* *[LSDJSAVE.SAV]* is the save that'll be patched. If you want to patch a .SAV file, you have to supply the number of the song *[SONGNUMBER]* you'll want to add the synth to.
 * *[SONG.LSDSNG|.SRM]* is the song file that'll be patched. In that case, you don't have to supply a song number.
 * *[SYNTHFILE.SNT]* is the synth data that'll be patched.
 * *[SYNTHNUMBER]* is the ID of the synth that'll be written to.
 
 ## crunch-patching
+
+**Crunch-patching** is downsampling and bitcrushing a sample and write it right away into a LSDJ save file/song.
+
+To *crunch-patch* a sample, you can use both of these commands :
+```
+$ node crunch-patcher.js [SAMPLE.WAV] [NOTE|FREQUENCY] [LSDJSAVE.SAV] [SONGNUMBER] [SYNTHNUMBER]
+```
+```
+$ node crunch-patcher.js [SAMPLE.WAV] [NOTE|FREQUENCY] [SONG.SRM|.LSDSNG] [SYNTHNUMBER]
+```
+
+* *[SAMPLE.WAV]* is the file that'll be crunched
+* *[NOTE|FREQUENCY]* is either the note at which the sample is (ex: C4, D4) or its frequency (ex: 440 Hz).
+* *[LSDJSAVE.SAV]* is the save that'll be patched. If you want to patch a .SAV file, you have to supply the number of the song *[SONGNUMBER]* you'll want to add the synth to.
+* *[SONG.LSDSNG|.SRM]* is the song file that'll be patched. In that case, you don't have to supply a song number.
+* *[SYNTHNUMBER]* is the ID of the synth that'll be written to.
+
 
 ## exporting
 
@@ -46,7 +64,7 @@ $ node export.js [LSDJSAVE.SAV] [SONGNUMBER] [SYNTHFILE.SNT] [SYNTHNUMBER]
 $ node export.js [SONG.LSDSNG|.SRM] [SYNTHFILE.SNT] [SYNTHNUMBER]
 ```
 
-* *[LSDJSAVE.SAV]* is the save that'll be used as source. If you want to find a synth in a .SAV file, you have to supply the number of the song [SONGNUMBER] you'll want to get the synth from.
+* *[LSDJSAVE.SAV]* is the save that'll be used as source. If you want to find a synth in a .SAV file, you have to supply the number of the song *[SONGNUMBER]* you'll want to get the synth from.
 * *[SONG.LSDSNG|.SRM]* is the song file that'll be used as source. In that case, you don't have to supply a song number.
 * *[SYNTHFILE.SNT]* is the path of the .snt file that'll be created.
 * *[SYNTHNUMBER]* is the ID of the synth that'll be exported.
