@@ -23,7 +23,7 @@ if ext == '.sav':
 elif ext == '.srm' or ext == '.lsdsng':
     # get cmdline args
     synthpath = int(sys.argv[2])
-    synthnumber = int(sys.argv[3])
+    synthnumber = sys.argv[3]
     # get project
     project = pylsdj.load_srm(savpath)
 else:
