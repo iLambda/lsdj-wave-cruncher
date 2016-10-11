@@ -4,10 +4,10 @@
   "description": "Turns a sound clip into a LSDJ wavetable synth. ",
   "main": "lib/cruncher.js",
   "scripts": {
-    "test": "node test/cruncher.js",
     "start": "node crunch-patch.js",
     "crunch": "node crunch.js",
-    "patch": "node patch.js"
+    "patch": "node patch.js",
+    "export": "node export.js"
   },
   "repository": {
     "type": "git",
