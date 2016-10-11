@@ -3,7 +3,11 @@ logs
 *.log
 npm-debug.log*
 *.snt
+*.lsdsng
+*.sav
+*.srm
 *.synt
+*.pyc
 
 # Runtime data
 pids
