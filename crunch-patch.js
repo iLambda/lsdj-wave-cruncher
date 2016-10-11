@@ -9,7 +9,7 @@ var PythonShell = require('python-shell')
 // define flags
 flags.defineBoolean('normalize', false, 'Normalize the wave ?')
 flags.defineBoolean('cleartemp', true, 'Clear the temporary .snt file ?')
-flags.defineBoolean('channel', 0, 'Channel for data?')
+flags.defineInteger('channel', 0, 'Channel for data?')
 
 // check usage
 if (process.argv.length < 6) {
@@ -69,11 +69,14 @@ shell.end(function (err) {
     console.log("Error : " + err)
     process.exit(1)
   }
+
+  // clear temp ?
+  if (flags.get('cleartemp')) {
+    fs.unlinkSync(filename)
+  } else {
+    fs.renameSync(filename, filename.slice(0, -3))
+  }
+
   // done
   console.log('Done!')
 })
-
-// clear temp ?
-
-// done
-console.log('Done!')
