@@ -26,7 +26,7 @@ var synthdata = cruncher(process.argv[2], process.argv[3], {
 
 // log
 var filename = path.basename(process.argv[2], path.extname(process.argv[2])) + '.snt'
-console.log("Saving data as" + filename + "...")
+console.log("Saving data as " + filename + "...")
 // creating buffer
 var buf = Buffer.from(_.map(_.chunk(synthdata, 2), function (chunk) {
   return _.reduce(chunk, function(cur, oth) {
