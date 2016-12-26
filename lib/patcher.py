@@ -4,7 +4,7 @@ import sys
 import os.path
 
 # check argv length
-if (sys.argv <= 5):
+if (len(sys.argv) < 4):
     sys.exit('Usage : python patcher.py ([SAVEFILE.sav] [#TRACKNUMBER] or [SONGFILE.srm|.lsdsng]) [SYNTH.snt] [#SYNTHNUMBER]')
 
 # get file patcher
@@ -42,8 +42,8 @@ with open(synthpath, 'rb') as f:
 synthdata = [synthdata[x:x+16] for x in range(0, len(synthdata), 16)]
 for i in range(len(synthdata)):
     for j in range(len(synthdata[i])):
-        synth.waves[i][2*j] = ord(synthdata[i][j]) >> 4
-        synth.waves[i][2*j+1] = ord(synthdata[i][j]) & 0x0F
+        synth.waves[i][2*j] = synthdata[i][j] >> 4
+        synth.waves[i][2*j+1] = synthdata[i][j] & 0x0F
 
 # save modified file
 if ext == '.sav':
