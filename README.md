@@ -13,7 +13,7 @@ To *crunch* a sample, use :
 $ node crunch.js [SAMPLE.WAV] [NOTE|FREQUENCY] --normalize --channel=0
 ```
 * *[SAMPLE.WAV]* is the file that'll be crunched.
-* *[NOTE|FREQUENCY]* is either the note at which the sample is (ex: C4, D4) or its frequency (ex: 440 Hz).
+* *[NOTE|FREQUENCY|auto]* is either the note at which the sample is (ex: C4, D4), its frequency (ex: 440 Hz), or auto to auto-detect the frequency.
 * *--normalize*, if present, will [normalize](https://en.wikipedia.org/wiki/Audio_normalization) the sample.
 * *--channel=0* specifies the channel where the sound data will be taken. If not present, it defaults to the 1st channel (0). This parameter is only relevant for stereo sound.
 
