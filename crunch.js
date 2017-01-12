@@ -10,7 +10,7 @@ flags.defineBoolean('channel', 0, 'Channel for data?')
 
 // check usage
 if (process.argv.length < 4) {
-  console.log('Usage: node crunch.js [SOUND.WAV] [NOTE|BASE FREQUENCY]')
+  console.log('Usage: node crunch.js [SOUND.WAV] [NOTE|BASE FREQUENCY|auto]')
   process.exit(1)
 }
 // parse flags
