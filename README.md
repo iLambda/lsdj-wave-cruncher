@@ -13,7 +13,7 @@ To *crunch* a sample, use :
 $ node crunch.js [SAMPLE.WAV] [NOTE|FREQUENCY] --normalize --channel=0
 ```
 * *[SAMPLE.WAV]* is the file that'll be crunched.
-* *[NOTE|FREQUENCY]* is either the note at which the sample is (ex: C4, D4) or its frequency (ex: 440 Hz).
+* *[NOTE|FREQUENCY|auto]* is either the note at which the sample is (ex: C4, D4), its frequency (ex: 440 Hz), or auto to auto-detect the frequency.
 * *--normalize*, if present, will [normalize](https://en.wikipedia.org/wiki/Audio_normalization) the sample.
 * *--channel=0* specifies the channel where the sound data will be taken. If not present, it defaults to the 1st channel (0). This parameter is only relevant for stereo sound.
 
@@ -39,12 +39,12 @@ $ node patch.js [SONG.LSDSNG|.SRM] [SYNTHFILE.SNT] [SYNTHNUMBER]
 
 To *crunch-patch* a sample, you can use both of these commands :
 ```
-$ node crunch-patcher.js [SAMPLE.WAV] [NOTE|FREQUENCY] [LSDJSAVE.SAV] [SONGNUMBER] [SYNTHNUMBER]
-$ node crunch-patcher.js [SAMPLE.WAV] [NOTE|FREQUENCY] [SONG.SRM|.LSDSNG] [SYNTHNUMBER]
+$ node crunch-patcher.js [SAMPLE.WAV] [NOTE|FREQUENCY|auto] [LSDJSAVE.SAV] [SONGNUMBER] [SYNTHNUMBER]
+$ node crunch-patcher.js [SAMPLE.WAV] [NOTE|FREQUENCY|auto] [SONG.SRM|.LSDSNG] [SYNTHNUMBER]
 ```
 
 * *[SAMPLE.WAV]* is the file that'll be crunched.
-* *[NOTE|FREQUENCY]* is either the note at which the sample is (ex: C4, D4) or its frequency (ex: 440 Hz).
+* *[NOTE|FREQUENCY|auto]* is either the note at which the sample is (ex: C4, D4), its frequency (ex: 440 Hz), or auto to auto-detect the frequency.
 * *[LSDJSAVE.SAV]* is the save that'll be patched. If you want to patch a .SAV file, you'll have to supply the number of the song *[SONGNUMBER]* you want to add the synth to.
 * *[SONG.LSDSNG|.SRM]* is the song file that'll be patched. In that case, you don't have to supply a song number.
 * *[SYNTHNUMBER]* is the ID of the synth where the data will be written.
