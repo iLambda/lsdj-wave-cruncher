@@ -10,7 +10,7 @@ lsdj-wave-cruncher is a bundle of scripts allowing an LSDJ user to create waveta
 
 To *crunch* a sample, use :
 ```
-$ node crunch.js [SAMPLE.WAV] [NOTE|FREQUENCY|auto] [--linear|--log] --normalize --channel=0
+$ node crunch.js [SAMPLE.WAV] [NOTE|FREQUENCY|auto] [--linear|--exp] --normalize --channel=0
 ```
 * *[SAMPLE.WAV]* is the file that'll be crunched.
 * *[NOTE|FREQUENCY|auto]* is either the note at which the sample is (ex: C4, D4), its frequency (ex: 440 Hz), or auto to auto-detect the frequency.
