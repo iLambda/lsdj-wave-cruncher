@@ -7,6 +7,8 @@ var flags = require('flags')
 // define flags
 flags.defineBoolean('normalize', false, 'Normalize the wave ?')
 flags.defineBoolean('channel', 0, 'Channel for data?')
+flags.defineBoolean('linear', false, 'Linear interpolation?')
+flags.defineBoolean('exp', false, 'Exponential interpolation?')
 
 // check usage
 if (process.argv.length < 4) {
@@ -21,7 +23,9 @@ console.log("Crunching data...")
 // crunch
 var synthdata = cruncher(process.argv[2], process.argv[3], {
   normalize: flags.get('normalize'),
-  channel: flags.get('channel')
+  channel: flags.get('channel'),
+  linear: flags.get('linear'),
+  exp: flags.get('exp')
 })
 
 // log
