@@ -42,8 +42,14 @@ with open(synthpath, 'rb') as f:
 synthdata = [synthdata[x:x+16] for x in range(0, len(synthdata), 16)]
 for i in range(len(synthdata)):
     for j in range(len(synthdata[i])):
-        synth.waves[i][2*j] = synthdata[i][j] >> 4
-        synth.waves[i][2*j+1] = synthdata[i][j] & 0x0F
+        try:
+             synth.waves[i][2*j] = ord(synthdata[i][j]) >> 4
+        except:
+             synth.waves[i][2*j] = synthdata[i][j] >> 4
+        try:
+             synth.waves[i][2*j+1] = ord(synthdata[i][j]) & 0x0F
+        except:
+             synth.waves[i][2*j+1] = synthdata[i][j] & 0x0F
 
 # save modified file
 if ext == '.sav':
