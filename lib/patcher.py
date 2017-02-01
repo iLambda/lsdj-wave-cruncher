@@ -54,9 +54,12 @@ for i in range(len(synthdata)):
 # save modified file
 if ext == '.sav':
     sav.save(savpath)
+    print(savpath + ' saved!')
 elif ext == '.srm':
     project.save_srm(savpath)
+    print(savpath + ' saved!')
 elif ext == '.lsdsng':
     project.save_lsdsng(savpath)
+    print(savpath + ' saved!')
 else:
     sys.exit('Invalid savefile/songfile (extension ' + ext + ' unsupported).')
